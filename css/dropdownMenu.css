@@ -1,0 +1,23 @@
+.myDropdownMenu {
+    background-color: whitesmoke;
+    color:#4C27E0;
+    display: flex;
+    margin-top: 50px;
+    padding-top: 30px;
+}
+
+.myDropdownMenu > ul > li > a {
+    text-decoration: none;
+    
+}
+
+.myDropdownMenu > ul {
+    list-style: none;
+    padding: 15px;
+}
+
+@media screen and (max-width:740px) {
+    .myDropdownMenu {
+        display: inline;
+    }
+}
