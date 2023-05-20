@@ -1,0 +1,27 @@
+nav {
+    border-right: 3px solid #1a8dc2;
+    width: 20vw;
+    padding-left:20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+nav > h1 {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size:2vw;
+}
+
+nav > ul {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+nav>ul>a {
+    font-size: 1.4vw;
+    line-height: 5vh;
+    color: white;
+    text-decoration: none;
+}
+
