@@ -27,8 +27,11 @@ button {
     color: white;
 }
 
-.newAdd>h4 {
+.newAdd>h5 {
     color: #00acee;
+    font-size: 80%;
+    font-weight: bolder;
+
 }
 
 .newAdd>h6 {
@@ -41,24 +44,28 @@ button {
 
 .orderClassify>a {
     text-decoration: none;
-    color: #c6e3fa;
+    font-weight: bolder; 
+    color: #FF754A;
     float: right;
     margin-right: 10px;
 }
 
+.orderClassify>a:hover {
+    color: #4C27E0;
+}
+
 .btn-delete {
-    margin-top: 10px;
-    background-color:#205370;
-    border: 1px solid #00acee;
+    background-color: #cd5a38;
+    border: 2px solid #FF754A;
     border-radius: 25px;
     font-size: 10px;
     font-weight:bolder;
     color: white;
-    padding: 3.5px;
+    padding: 3px;
 }
 
 .btn-delete:hover {
-    background-color: #00acee;
-    border: 1px solid rgba(33, 192, 240, 0.708);
-    color: #141f27;
+    background-color:#FF754A;
+    border: 1px solid #FF754A;
+    color: white;
 }

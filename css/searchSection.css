@@ -9,8 +9,8 @@
     margin-top: 10px;
     height: 5vh;
     width: 7vw;
-    background-color: #28b6f9;
-    border: 1px solid #28b6f9;
+    background-color: #4C27E0;
+    border: 1px solid #4C27E0;
     border-radius: 10px;
     font-size: 1.3vw;
     font-weight: bolder;
@@ -27,8 +27,8 @@
     border-radius: 25px;
 }
 .btn-search:hover {
-    background-color: #206f98;
-    border: 3px solid #28b6f9;
+    background-color: #FF754A;
+    border: 3px solid #FF754A;
     color:white;
 }
 

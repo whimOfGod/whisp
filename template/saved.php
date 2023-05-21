@@ -7,13 +7,13 @@
     $verifyCondition = $verify->fetchAll(PDO::FETCH_ASSOC);
 
     if ($verifyCondition == false) {
-        // Vérification si un fichier d'avatar a été envoyé
+        // on vérifie si un fichier avatar a été envoyé
         if (isset($_FILES['avatar']) && $_FILES['avatar']['error'] === UPLOAD_ERR_OK) {
             $avatar = $_FILES['avatar']['name'];
             $avatar_tmp = $_FILES['avatar']['tmp_name'];
 
-            // déplacement du fichier vers l'espace de stockage 
-            move_uploaded_file($avatar_tmp, "./images/avatar/images " . $avatar);
+            // déplacement du fichier vers le dossier de stockage 
+            move_uploaded_file($avatar_tmp, "../whisp/images/avatar " . $avatar);
         } else {
             $avatar = null;
         }

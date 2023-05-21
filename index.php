@@ -28,75 +28,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>whisp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/c6879e030e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="feedBody" >
-   
-    <main id="mainContent" >
-        <nav>   
-        <h1>whisp</h1>
-            <ul>
-                <a href="#"><li># Whisphome</li></a>
-                <a href="#"><li># message</li></a>
-                <a href="#"><li># notification</li></a>
-                <a href="#"><li># setting</li></a>
-                <a href="inscription.php">connectez-vous ?</a>
-                <a href="template/disconnect.php"># disconnect </a>
-                    <?php if (isset($_SESSION['s_users_id'])) { ?>
-                        <div class="user-avatar">
-                            <?php if ($_SESSION['s_avatar']) { ?>
-                                <img src="images/avatar/<?php echo $_SESSION['s_avatar']; ?>" width=50 alt="Avatar">
-                            <?php } else { ?>
-                                <img src="images/avatar/default-avatar.png" alt="Default Avatar">
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
-            </ul>
-            
-        </nav>
-        <!-- Formulaire de connexion -->
 
-        <div class="container"> 
-                <!-- sauvegarde des whisps-->
-                    <form method="POST" action="template/whisp_saved.php" enctype="multipart/form-data">
-                        <input type="hidden" name="user_id" value="10"><!-- un champ de type "hidden" nommé "user_id" dont la valeur est fixée à "10". Cette valeur devrait être remplacée par l'ID de l'utilisateur actuellement connecté. -->
-                        <input type="text" name="tweet" placeholder=" une petite murmure ? " required>
-                        <input type="file" name="media">
-                        <button type="submit" class="btn-post"> post </button>
-                    </form>
-                    <div class="orderClassify">
-                        <a href="?order=asc">↓ anciens</a>
-                        <a href="?order=desc">↑ recents</a>
-                    </div>
-            <!--une boucle foreach pour parcourir le tableau $whisps -->
-                <?php foreach ($whisps as $element) { ?>
-                    <div class="newAdd">
-                        <h4><?= $element['pseudo'] ?></h4>
-                        <p><?= $element['tweet'] ?> </p>
-                        <?php if ($element['media']) { ?>
-                        <img src="images<?= $element['media'] ?>" width=200 alt="media">
-                        <?php } ?>
-                        <h6><?= $element['date'] ?> </h6>
-                        <!--  -->           
-                        <form action="delete.php" method="POST">
-                            <input type="hidden" name="supp" value=" <?= $element['whisps_id']; ?> ">
-                            <button class="btn-delete" type="submit">supprimer</button>
+    <?php include 'template/header.php' ?>   
+
+        <main id="mainContent" > 
+            <?php include 'template/nav.php' ?>
+
+            <!-- Formulaire de connexion -->
+            <div class="container"> 
+                    <!-- sauvegarde des whisps-->
+                        <form method="POST" action="template/whisp_saved.php" enctype="multipart/form-data">
+                            <input type="hidden" name="user_id" value="10"><!-- un champ de type "hidden" nommé "user_id" dont la valeur est fixée à "10". Cette valeur devrait être remplacée par l'ID de l'utilisateur actuellement connecté. -->
+                            <input type="text" name="tweet" placeholder=" une petite murmure ? " required>
+                            <input type="file" name="media">
+                            <button type="submit" class="btn-post"> post </button>
                         </form>
-                    </div>
-                <?php  } ?>
-            </div>
-            
-            <form action="template/research.php" method="GET">
-                <div class="searchContent">
-                    <input class="inputSearch" type="search" name="research" placeholder="Rechercher des whisps">
-                    <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <div class="orderClassify">
+                            <a href="?order=asc">↓ anciens</a>
+                            <a href="?order=desc">↑ recents</a>
+                        </div>
+                <!--une boucle foreach pour parcourir le tableau $whisps -->
+                    <?php foreach ($whisps as $element) { ?>
+                        <div class="newAdd">
+                            <h5><?= $element['pseudo'] ?></h5>
+                            <p><?= $element['tweet'] ?> </p>
+                            <?php if ($element['media']) { ?>
+                            <img src="images<?= $element['media'] ?>" width="100%" alt="media">
+                            <?php } ?>
+                            <h6><?= $element['date'] ?> </h6>
+                            <!--  -->           
+                            <form action="delete.php" method="POST">
+                                <input type="hidden" name="supp" value=" <?= $element['whisps_id']; ?> ">
+                                <button class="btn-delete" type="submit">supprimer</button>
+                            </form>
+                        </div>
+                    <?php  } ?>
                 </div>
-            </form>
+                
+                <form action="template/research.php" method="GET">
+                    <div class="searchContent">
+                        <input class="inputSearch" type="search" name="research" placeholder="Rechercher des whisps">
+                        <button class="btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </div>
+                </form>
+        </main>
 
+        <?php include 'template/footer.php' ?>
 
-    </main>
-    
-
+    <script src="js/main.js"></script>
 </body>
 </html>

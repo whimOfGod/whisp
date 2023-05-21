@@ -14,7 +14,7 @@ if(isset($_FILES['media']) && $_FILES['media']['error'] === UPLOAD_ERR_OK) {
     $media_tmp = $_FILES['media']['tmp_name'];
 
     // Déplacer le fichier vers l'emplacement souhaité
-    move_uploaded_file($media_tmp, "images/" . $media);
+    move_uploaded_file($media_tmp, "../whisp/images/" . $media);
 } else {
     $media = null;
 }
