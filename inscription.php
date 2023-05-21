@@ -23,7 +23,7 @@
     <main class="suscribMain">
     <!--<div class="imageWhisp"><img src="images/splash.png" alt="" style="height: 700px;width: 700px;"></div>-->
         <div class="myFormular">
-            <form class="myFormularContent" method="POST" action="template/saved.php" >
+            <form class="myFormularContent" method="POST" action="template/saved.php" enctype="multipart/form-data" >
                 <h2>Formulaire</h2>
                 <label for="">nom & prénoms</label>
                 <input class="inputForm" type ="text" name ="nom" placeholder=" ex: jack sparrow " required>
@@ -32,7 +32,7 @@
                 <label for="">mail</label>
                 <input class="inputForm" type="email" name = "mail" placeholder = " ex: jhonnydeep@gmail.com" >
                 <label for="">mot de passe</label>
-                <label for="avatar">Avatar :</label>
+                <label for="avatar">profil</label>
                 <input type="file" name="avatar" id="avatar">
                 <input class="inputForm" type="password" name = "my_password" placeholder = " ********** " max="20" min="0">
                 <a href="reconnect.php">vous avez déjà un compte ?</a>

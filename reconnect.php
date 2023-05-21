@@ -23,7 +23,7 @@
         <main class="suscribMain">
         <!--<div class="imageWhisp"><img src="images/splash.png" alt="" style="height: 700px;width: 700px;"></div>-->
             <div class="myFormular">
-            <form method="POST" action="template/login.php">
+            <form method="POST" action="template/login.php" enctype="multipart/form-data">
                 <input type="email" name="mail" placeholder="Votre adresse e-mail" required>
                 <input type="password" name="password" placeholder="Mot de passe" required>
                 <button type="submit">Connexion</button>

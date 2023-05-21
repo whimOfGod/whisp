@@ -35,7 +35,7 @@
    
     <main id="mainContent" >
         <nav>   
-            <h1>whisp</h1>
+        <h1>whisp</h1>
             <ul>
                 <a href="#"><li># Whisphome</li></a>
                 <a href="#"><li># message</li></a>
@@ -46,9 +46,9 @@
                     <?php if (isset($_SESSION['s_users_id'])) { ?>
                         <div class="user-avatar">
                             <?php if ($_SESSION['s_avatar']) { ?>
-                                <img src="template/avatar/<?php echo $_SESSION['s_avatar']; ?>" alt="Avatar">
+                                <img src="images/avatar/<?php echo $_SESSION['s_avatar']; ?>" width=50 alt="Avatar">
                             <?php } else { ?>
-                                <img src="template/avatar/default-avatar.png" alt="Default Avatar">
+                                <img src="images/avatar/default-avatar.png" alt="Default Avatar">
                             <?php } ?>
                         </div>
                     <?php } ?>
@@ -60,7 +60,6 @@
         <div class="container"> 
                 <!-- sauvegarde des whisps-->
                     <form method="POST" action="template/whisp_saved.php" enctype="multipart/form-data">
-                        <h3></h3>
                         <input type="hidden" name="user_id" value="10"><!-- un champ de type "hidden" nommé "user_id" dont la valeur est fixée à "10". Cette valeur devrait être remplacée par l'ID de l'utilisateur actuellement connecté. -->
                         <input type="text" name="tweet" placeholder=" une petite murmure ? " required>
                         <input type="file" name="media">
@@ -75,9 +74,9 @@
                     <div class="newAdd">
                         <h4><?= $element['pseudo'] ?></h4>
                         <p><?= $element['tweet'] ?> </p>
-                            <?php if ($element['media']) { ?>
-                                <img src="images<?= $element['media'] ?>" width=200 alt="media">
-                            <?php } ?>
+                        <?php if ($element['media']) { ?>
+                        <img src="images<?= $element['media'] ?>" width=200 alt="media">
+                        <?php } ?>
                         <h6><?= $element['date'] ?> </h6>
                         <!--  -->           
                         <form action="delete.php" method="POST">

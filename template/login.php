@@ -2,7 +2,7 @@
 session_start();
 require "connexion.php";
 
-// Vérification des champs du formulaire de connexion
+// on procède à une vérification des champs du formulaire de connexion
 if (isset($_POST['mail']) && isset($_POST['password'])) {
     $mail = $_POST['mail'];
     $password = $_POST['password'];

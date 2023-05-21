@@ -30,14 +30,15 @@
             <?php foreach ($results as $element){  ?>
                 <div class="newAdd" id="tweetSearch<?php echo $element['whisps_id']; ?>">
                         <h4><?php echo $element['pseudo']; ?></h4>
-                            <p><?php echo $element['tweet']; ?></p>
-                            <img src="" width="500" alt="media" <?= echo $element['media'] ?> >
+                        <p><?php echo $element['tweet']; ?></p>
+                        <img src="../images" width="500" alt="media" <?php echo $element['media'] ?> >
                         <h6><?php echo $element['date']; ?></h6>
                     <form action="delete.php" method="POST">
                         <input type="hidden" name="supp" value="<?php echo $element['whisps_id']; ?>">
                         <button type="submit">Supprimer</button>
                     </form>
                 </div>
+                <a href="../index.php">retournez à l'accueil</a>
             <?php } ?>
     <?php else: ?>
         <p>Aucun tweet trouvé pour "<?php echo $query; ?>"</p>

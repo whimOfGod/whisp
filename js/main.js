@@ -5,6 +5,8 @@ function showSidebarMenu() {
 function hideSidebarMenu() {
     document.querySelector(".myDropdownMenu").style.display = "none";
 }
+
+
 /*const iconDropdown = document.querySelector(".myDropdownMenu");
 const iconButton = document.querySelector(".myIconButton");
 

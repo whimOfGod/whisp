@@ -12,8 +12,8 @@
             $avatar = $_FILES['avatar']['name'];
             $avatar_tmp = $_FILES['avatar']['tmp_name'];
 
-            // Déplacer le fichier vers l'emplacement souhaité
-            move_uploaded_file($avatar_tmp, "avatar/" . $avatar);
+            // déplacement du fichier vers l'espace de stockage 
+            move_uploaded_file($avatar_tmp, "./images/avatar/images " . $avatar);
         } else {
             $avatar = null;
         }
