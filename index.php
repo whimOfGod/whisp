@@ -39,13 +39,11 @@
     <?php include 'template/header.php' ?>   
 
         <main id="mainContent" > 
-            <?php include 'template/nav.php' ?>
 
-            <!-- Formulaire de connexion -->
+        <?php include 'template/nav.php' ?>
             <div class="container"> 
-                    <!-- sauvegarde des whisps-->
+                    <!-- sauvegarde des whisps -->
                         <form method="POST" action="template/whisp_saved.php" enctype="multipart/form-data">
-                            <input type="hidden" name="user_id" value="10"><!-- un champ de type "hidden" nommé "user_id" dont la valeur est fixée à "10". Cette valeur devrait être remplacée par l'ID de l'utilisateur actuellement connecté. -->
                             <input type="text" name="tweet" placeholder=" une petite murmure ? " required>
                             <input type="file" name="media">
                             <button type="submit" class="btn-post"> post </button>

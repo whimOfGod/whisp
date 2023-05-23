@@ -38,12 +38,11 @@
                         <button type="submit">Supprimer</button>
                     </form>
                 </div>
-                <a href="../index.php">retournez à l'accueil</a>
             <?php } ?>
     <?php else: ?>
         <p>Aucun tweet trouvé pour "<?php echo $query; ?>"</p>
     <?php endif; ?>
-
+    <a href="../index.php">retournez à l'accueil</a>
     <?php if (count($results) > 0): ?>
         <script>
             // cette instruction doit rediriger vers le tweet
