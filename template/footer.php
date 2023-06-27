@@ -1,4 +1,4 @@
-<footer class="px-5 border-top pt-3">
+<footer class="px-5 border-top pt-3 ">
     <!-- Menu -->
     <ul class="d-sm-flex px-sm-5 list-unstyled">
         <li class="text--body-tertiary w-auto border-end border-black pe-3 mb-1">accueil</li>

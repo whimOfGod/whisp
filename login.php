@@ -4,13 +4,13 @@
                 id="hoverSection">
 
                 <!-- un bouton pour fermer la section -->
-                <button class="btn bg-danger text-white position-absolute top-0 end-0" onclick="closeSignIn()">fermer</button> 
+                <button class="btn bg-danger text-white position-absolute top-0 end-0 m-4" onclick="closeSignIn()">Fermer</button> 
     <div>
         <!-- Login form -->
         <div id="sign_in" class="rounded-3 bg-white border border-info p-5 h-full">
             <form   class="d-flex flex-column" method="POST" action="template/login_back.php"
                     enctype="multipart/form-data">
-                <h2 class="fw-bold fs-3"> S'AUTHENTIFIÉ </h2>
+                <h2 class="fw-bold fs-3 "> S'AUTHENTIFIER </h2>
                 <input class="my-3 p-1 rounded-3 border-2 border-primary no-outline" type="email"
                         name="mail" placeholder="Email" 
                         autocomplete="off"

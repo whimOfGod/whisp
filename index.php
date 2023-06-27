@@ -12,24 +12,24 @@ session_start();
                 $order = 'ORDER BY date DESC'; 
             }
         };
-    // connexion à la base de donnée
-    require "template/database.php";
-    //ligne (17) préparation , ligne (18):exécution, ligne(20) récupérer tous les résultats sous forme d'un tableau associatif dans la variable
-    $requete = $database->prepare(" SELECT * FROM whisps INNER JOIN users ON whisps.user_id = users.users_id $order");
-    $requete->execute();
-    //on définit une variable qui va stocker notre requête 
-    $whisps = $requete->fetchAll(PDO::FETCH_ASSOC);
-    
-    if (isset($_GET['research'])) {
-        $query = $_GET['research'];
-        $requete = $database->prepare("SELECT * FROM whisps INNER JOIN users ON whisps.user_id = users.users_id WHERE tweet LIKE :query ORDER BY date DESC");
-        $requete->execute([
-            ':query' => '%'.$query.'%'
-        ]);
-        $_SESSION['results'] = $requete->fetchAll(PDO::FETCH_ASSOC);
-    } else {
-        $_SESSION['results'] = [];
-    }
+        // connexion à la base de donnée
+        require "template/database.php";
+        //ligne (17) préparation , ligne (18):exécution, ligne(20) récupérer tous les résultats sous forme d'un tableau associatif dans la variable
+            $requete = $database->prepare(" SELECT * FROM whisps INNER JOIN users ON whisps.user_id = users.users_id $order ");
+            $requete->execute();
+            //on définit une variable qui va stocker notre requête 
+            $whisps = $requete->fetchAll(PDO::FETCH_ASSOC);
+        
+        if (isset($_GET['research'])) {
+            $query = $_GET['research'];
+            $requete = $database->prepare("SELECT * FROM whisps INNER JOIN users ON whisps.user_id = users.users_id WHERE tweet LIKE :query ORDER BY date DESC");
+            $requete->execute([
+                ':query' => '%'.$query.'%'
+            ]);
+            $_SESSION['results'] = $requete->fetchAll(PDO::FETCH_ASSOC);
+        } else {
+            $_SESSION['results'] = [];
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +61,7 @@ session_start();
         <!-- Main content -->
         <section class="col-xl-6 col-md-8">
             <!-- Menu -->
-            <ul class="d-none d-xl-flex justify-content-center list-unstyled mb-1" id="menu">
+            <ul class="d-none d-xl-flex justify-content-center list-unstyled mb-3 mt-1 " id="menu">
                 <li class="cursor-pointer text-primary fw-bold border-end border-3 border-primary pe-3">Accueil</li>
                 <li class="cursor-pointer text-primary fw-bold px-3 border-end border-3 border-primary">A propos</li>
                 <li class="cursor-pointer text-primary fw-bold px-3 border-end border-3 border-primary">

@@ -1,11 +1,15 @@
 @import url("header.css");
 @import url("avatar.css");
+@import url("login.css");
 
 *{
     margin: 0;
     padding: 0;
 }
 
+#sign_in {
+    backdrop-filter: blur(10px);
+}
 .text-primary{
     color: #4C27E0;
 }
@@ -22,8 +26,17 @@
     color: #d2284a;
 }
 
+.icon-color-green{
+    color: #59B23E;
+}
+
+
 .border-primary{
     border-color: #3C2BFA;
+}
+
+button :hover {
+    background-color: #FF754A;
 }
 
 .icon-color-w{
