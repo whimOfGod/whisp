@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.profile-content {
+    min-height: 66vh;
+}
+
+.profile-content-body {
+    min-height: 66vh;
+}

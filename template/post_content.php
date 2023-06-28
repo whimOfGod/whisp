@@ -4,7 +4,7 @@
         <!-- lorsque l'utilisateur n'est pas connecté, il ne peut pas publier de message -->
         <?php if (isset($_SESSION['s_pseudo'])) { ?>
             <textarea class="flex-grow-1 bg-secondary-subtle no-outline border-0" name="tweet"
-                placeholder="Ecrivez quelque chose..."></textarea>
+                      placeholder="Ecrivez quelque chose..."></textarea>
             <!-- Add image button and tag -->
             <figure class="d-flex flex-column">
                 <label for="imagePost">
@@ -56,19 +56,41 @@
     <?php foreach ($whisps as $element) { ?>
         <div class="bg-secondary-subtle d-flex justify-content-center p-2">
             <article class="w-75 bg-white rounded-4 px-3 py-2 ">
-                <h3 class="text-primary fs-6 fw-semibold">
-                    @
-                    <?= $element['pseudo'] ?>
-                    <i class="fa-solid fa-tags w-20 pt-2 cursor-pointer float-end
-                        <?php
-                            echo 'icon-color-' . $element['tag']
-                        ?>">
-                    </i>
-                </h3>
-                <!-- content -->
-                <p>
-                    <?= $element['tweet'] ?>
-                </p>
+                <!-- that div have a row class that will display the information pf the connected user,it'll be divide in three -->
+                <div class="row"> 
+                    <!-- avatar -->
+                    <div class=" col-1 d-flex flex-column align-items-center justify-content-start">
+                        <!-- if the user have an avatar, we display it, autherwise the default avatar will be displayed -->
+                        <?php if (!empty($_SESSION['s_avatar']) && file_exists('images/avatar/' . $_SESSION['s_avatar'])) { ?>
+                            <img src="images/avatar/<?php echo $_SESSION['s_avatar']; ?>" class="imgProfil" width="25" alt="Avatar">
+                        <?php } else { ?>
+                            <img class="border rounded-5 d-flex aligns-item-center" src="images/avatar/default-avatar.png" class="imgProfil" width="25" alt="Avatar">
+                        <?php } ?>
+                    </div>
+                    <!-- pseudo -->
+                    <div class="col d-flex align-items-center"> 
+                        <h3 class="text-primary fs-6 p-1 fw-semibold">
+                            @
+                            <?= $element['pseudo'] ?>
+                        </h3>
+                    </div>
+                    <!-- tag -->
+                    <div class="col-1">
+                        <i class="fa-solid fa-tags w-20 pt-2 cursor-pointer float-end 
+                            <?php
+                                echo 'icon-color-' . $element['tag'];
+                                # if the user doesn't have a tag, we display the default tag with the class icon-color-gray
+                                if ($element['tag'] == null) {
+                                    echo ' icon-color-gray';
+                                }
+                            ?>">
+                        </i>
+                    </div>
+                    <!-- the whisp content or the post content -->
+                        <p>
+                            <?= $element['tweet'] ?>
+                        </p>
+                </div>
                 <!-- Image -->
                 <?php if ($element['media']) { ?>
                     <figure class="border-top rounded cursor-pointer">
@@ -92,11 +114,11 @@
                 </form>
             </article>
         </div>
-    <?php } ?>
-    <!-- si la variable de session existe, on affiche le formulaire de suppression -->
-    <?php
-        if (isset($_SESSION['whisps_id'])) {
-            include 'confirm_delete.php';
-        }
-    ?>
+        <?php } ?>
+        <!-- si la variable de session existe, on affiche le formulaire de suppression -->
+        <?php
+            if (isset($_SESSION['whisps_id'])) {
+                include 'confirm_delete.php';
+            }
+        ?>
 </section>

@@ -46,31 +46,27 @@ session_start();
     <!-- Header -->
     <?php include 'template/header.php' ?>
     <!-- Index content -->
-    <section class="d-md-flex px-3 py-2">
+    <section class="d-md-flex px-3 py-2 ">
         <!-- Menu -->
-        <div class="d-none d-xl-block col-xl-3 pe-3">
+        <div class="d-none d-xl-block col-xl-2 pe-3">
             <?php include 'template/nav.php' ?>
         </div>
         <!-- Search Result and Message -->
-        <section class="order-3 col-md-4 col-xl-3 ps-md-4 d-flex flex-column flex-wrap align-items-center">
+        <section class="order-3 col-md-4 col-xl-2 ps-md-2 d-flex flex-column flex-wrap align-items-center">
             <!-- Search Result -->          
                 <?php include 'template/research.php' ?>
             <!-- Message -->
             <?php include 'template/message.php' ?>
         </section>
         <!-- Main content -->
-        <section class="col-xl-6 col-md-8">
+        <section class="col-xl-8 col-md-8 border p-2">
             <!-- Menu -->
-            <ul class="d-none d-xl-flex justify-content-center list-unstyled mb-3 mt-1 " id="menu">
-                <li class="cursor-pointer text-primary fw-bold border-end border-3 border-primary pe-3">Accueil</li>
-                <li class="cursor-pointer text-primary fw-bold px-3 border-end border-3 border-primary">A propos</li>
-                <li class="cursor-pointer text-primary fw-bold px-3 border-end border-3 border-primary">
-                    Confidentialité
-                </li>
-                <li class="cursor-pointer text-primary fw-bold px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
-                <li class="cursor-pointer text-primary fw-bold ps-3">
-                    <a class="text-primary text-decoration-none " href="login.php"> se connecter </a>
-                </li>
+            <ul class="d-none d-xl-flex justify-content-center align-items-center list-unstyled mb-3 h-60 bg-primary" id="menu">
+                <li class="middle-nav-hover cursor-pointer text-white  border-end border-3 border-primary pe-3">Accueil</li>
+                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Message</li>
+                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">A propos</li>
+                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Confidentialité</li>
+                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
             </ul>
             <!-- Greeting -->
             <p class="fw-bold">

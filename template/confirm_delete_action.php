@@ -31,7 +31,7 @@ if (isset($_SESSION['s_users_id'])) {
         }
     }
 }
-// delete session var 
-unset($_SESSION['whisps_id']);
-header("Location: ../index.php");
+        // delete session var 
+            unset($_SESSION['whisps_id']);
+            header("Location: ../index.php");
 ?>

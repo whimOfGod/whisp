@@ -11,14 +11,19 @@
             </figure>
                 <ul class="list-unstyled px-4 text-decoration-none" >
                   <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-house px-2 icon-hover"></i>Accueil</li>
-                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-user px-2"></i>Profil</li>
-                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-circle-info px-2"></i>A propos</li>
-                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-lock px-2"></i>Confidentialité</li>
-                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-right-to-bracket px-2"></i>
-                    <a class="text-white text-decoration-none  " onclick="showForm()">Se connecter</a>
+                    <li class="cursor-pointer d-flex align-items-center fw-semibold">
+                      <a class="text-decoration-none text-white" href="profile.php">
+                      <i class="fa-solid fa-user px-2"></i>
+                      Profil
+                    </a>
                   </li>
-                  <li class="cursor-pointer d-flex justify-content-space-between align-items-center fw-semibold"><i class="fa-solid fa-power-off px-2"></i>
-                    <a class="text-white text-decoration-none" href="template/disconnect.php">Se deconnecter</a>
+                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-circle-info px-2"></i>A propos</li>
+                    <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-lock px-2"></i>Confidentialité</li>
+                      <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-right-to-bracket px-2"></i>
+                        <a class="text-white text-decoration-none  " onclick="showForm()">Se connecter</a>
+                      </li>
+                    <li class="cursor-pointer d-flex justify-content-space-between align-items-center fw-semibold"><i class="fa-solid fa-power-off px-2"></i>
+                        <a class="text-white text-decoration-none" href="template/disconnect.php">Se deconnecter</a>
                   </li>
                     <?php if (!isset($_SESSION['s_users_id'])) { ?>
                       <li class="cursor-pointer" onclick="showForm()">S'inscrire</li>
