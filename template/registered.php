@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "database.php";
 
 $verify = $database->prepare("SELECT * FROM users WHERE mail = :mail");

@@ -56,5 +56,7 @@ function closeSignIn(){
 document.getElementById("hoverSection").classList.add("d-none");
 }
 
+// add a localStorage on the text area 
+// add a local storage to save the user's post
 
 

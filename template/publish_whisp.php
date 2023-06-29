@@ -1,5 +1,4 @@
 <?php
-session_start();
 require "database.php";
 
 // On Vérifie si l'utilisateur est connecté

@@ -10,4 +10,5 @@
     }   catch(PDOException $error) {
         die($error);
     }
+    session_start();
 ?>

@@ -1,5 +1,4 @@
 <?php 
-session_start();
     //initialisation de la variable $order
     $order = '';
     //vérification de l'existence la variable dans l'URL 
@@ -46,7 +45,7 @@ session_start();
     <!-- Header -->
     <?php include 'template/header.php' ?>
     <!-- Index content -->
-    <section class="d-md-flex px-3 py-2 ">
+        <section class="d-md-flex px-3 py-2 ">
         <!-- Menu -->
         <div class="d-none d-xl-block col-xl-2 pe-3">
             <?php include 'template/nav.php' ?>
@@ -54,7 +53,7 @@ session_start();
         <!-- Search Result and Message -->
         <section class="order-3 col-md-4 col-xl-2 ps-md-2 d-flex flex-column flex-wrap align-items-center">
             <!-- Search Result -->          
-                <?php include 'template/research.php' ?>
+            <?php include 'template/research.php' ?>
             <!-- Message -->
             <?php include 'template/message.php' ?>
         </section>

@@ -5,6 +5,24 @@
         <?php if (isset($_SESSION['s_pseudo'])) { ?>
             <textarea class="flex-grow-1 bg-secondary-subtle no-outline border-0" name="tweet"
                       placeholder="Ecrivez quelque chose..."></textarea>
+                      <script>
+                            // add a local storage to save the user's post
+                            <?php if (isset($_SESSION['s_pseudo'])) { ?>
+                            const post = document.querySelector('textarea');
+                                post.addEventListener('input', function(whisp_draft)
+                                    {
+                                        localStorage.setItem('post', whisp_draft.target.value);
+                                    });
+                                // when the user reload the page, the post will be saved and when he post it, the local storage will be cleared
+                                window.onload = function()
+                                    {
+                                        post.value = localStorage.getItem('post');
+                                        localStorage.clear();
+                                    }
+
+                            <?php } ?>
+                      </script>
+
             <!-- Add image button and tag -->
             <figure class="d-flex flex-column">
                 <label for="imagePost">
@@ -56,7 +74,7 @@
     <?php foreach ($whisps as $element) { ?>
         <div class="bg-secondary-subtle d-flex justify-content-center p-2">
             <article class="w-75 bg-white rounded-4 px-3 py-2 ">
-                <!-- that div have a row class that will display the information pf the connected user,it'll be divide in three -->
+                <!-- that div have a row class that will display the information of the connected user,it'll be divide in three -->
                 <div class="row"> 
                     <!-- avatar -->
                     <div class=" col-1 d-flex flex-column align-items-center justify-content-start">
@@ -99,14 +117,15 @@
                 <?php } ?>
 
                 <!-- Delete and post date -->
+                
                 <form action="template/delete_whisp.php" method="POST">
                     <div class="d-flex justify-content-between align-items-center">
                         <button type="submit" class="border-0 bg-inherit">
-                            <i class="fa-solid fa-trash icon-color-red ">
-                                <input type="hidden" name="supp" value="<?= $element['whisps_id'] ?>">
-                            </i>
+                            <?php if (isset($_SESSION['s_pseudo']) && $_SESSION['s_pseudo'] == $element['pseudo']) { ?>
+                                <i class="fa-solid fa-trash icon-color-red "></i>
+                            <?php } ?>
+                            <input type="hidden" name="supp" value="<?= $element['whisps_id'] ?>">
                         </button>
-                        
                         <span>
                             <?= $element['date'] ?>
                         </span>
