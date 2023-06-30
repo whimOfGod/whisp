@@ -1,3 +1,4 @@
+@import url("variable.css");
 .avatarIcon {
     width: 100%;
     height: 100%;
@@ -5,8 +6,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 5px #ccc;
+    border: 1px solid var(--grey-color);
+    box-shadow: 0 0 5px var(--grey-color);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }

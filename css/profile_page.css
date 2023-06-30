@@ -10,3 +10,7 @@
 .profile-content-body {
     min-height: 66vh;
 }
+
+.text-dark-color {
+    color: var(--dark-color);
+}

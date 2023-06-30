@@ -31,7 +31,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
     } else {
         // Utilisateur non trouvé
         echo "Identifiants invalides";
-        header("Location: ../login.php");
+        header("Location: ../index.php");
         exit();
     }
 } else {

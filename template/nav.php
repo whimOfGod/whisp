@@ -1,4 +1,4 @@
-<div aria-label="Menu">
+<div class="position-absolute top-3 start-0 mx-2" aria-label="Menu">
   <!-- Menu "Icon -->
   <figure class="cursor-pointer m-0 open_menu" id="open_menu" onclick="openMenu()">
     <img src="images/menu.svg" title="Ouvrir le menu" alt="Menu" class="w-40" />

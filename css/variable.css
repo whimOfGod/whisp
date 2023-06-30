@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #4C27E0; /* Blue purple*/
+    --secondary-color: #FF754A; /* orange */
+    --danger-color: #d2284a; /* red */
+    --success-color: #59B23E; /* green */
+    --medium-color: #9B9B9B; /* Star Dust*/
+    --grey-color: #ccc; /*  gray */
+    --light-color: #e2e3e5; /*  gray light */
+    --white-color: #fff; /*  white */
+    --dark-color: #000; /*  white */
+}

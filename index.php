@@ -1,6 +1,6 @@
 <?php 
     //initialisation de la variable $order
-    $order = '';
+        $order = 'ORDER BY date DESC';
     //vérification de l'existence la variable dans l'URL 
         if (isset($_GET['order'])) {
             if ($_GET['order'] == 'asc') {
@@ -45,86 +45,103 @@
     <!-- Header -->
     <?php include 'template/header.php' ?>
     <!-- Index content -->
-        <section class="d-md-flex px-3 py-2 ">
-        <!-- Menu -->
-        <div class="d-none d-xl-block col-xl-2 pe-3">
-            <?php include 'template/nav.php' ?>
-        </div>
-        <!-- Search Result and Message -->
-        <section class="order-3 col-md-4 col-xl-2 ps-md-2 d-flex flex-column flex-wrap align-items-center">
-            <!-- Search Result -->          
-            <?php include 'template/research.php' ?>
-            <!-- Message -->
-            <?php include 'template/message.php' ?>
-        </section>
-        <!-- Main content -->
-        <section class="col-xl-8 col-md-8 border p-2">
+        <section class="d-md-flex px-3 py-2 index_content">
             <!-- Menu -->
-            <ul class="d-none d-xl-flex justify-content-center align-items-center list-unstyled mb-3 h-60 bg-primary" id="menu">
-                <li class="middle-nav-hover cursor-pointer text-white  border-end border-3 border-primary pe-3">Accueil</li>
-                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Message</li>
-                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">A propos</li>
-                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Confidentialité</li>
-                <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
-            </ul>
-            <!-- Greeting -->
-            <p class="fw-bold">
-                Bonjour
-                <span class="text-primary">
-                    <?php
-                        //si la variable de session existe, afficher le pseudo de l'utilisateur
-                        if (isset($_SESSION['s_pseudo'])) {
-                            echo " ".$_SESSION['s_pseudo'];
-                        } else {
-                            echo ' visiteur';
-                        }
-                    ?>
-               </span>
-            </p>
-            <!-- Publications -->
-            <section class="border px-2 pt-2 pb-4 posts">
-                <!-- Make a publication -->
-                <?php include 'template/post_content.php' ?>
-            </section>
+            <div class="d-none d-xl-block col-xl-2 pe-3">
+                <?php include 'template/nav.php' ?>
+            </div>
+            <!-- Search Result and Message -->
+                <section class="order-3 col-md-4 col-xl-2 ps-md-2 d-flex flex-column flex-wrap align-items-center">
+                    <!-- Search Result -->          
+                    <?php include 'template/research.php' ?>
+                    <!-- Message -->
+                </section>
+            <!-- Main content -->
+                <section class="col-xl-8 col-md-8 border p-2">
+                    <!-- Menu -->
+                    <ul class="d-none d-xl-flex justify-content-center align-items-center list-unstyled mb-3 h-60 bg-primary" id="menu">
+                        <li class="middle-nav-hover cursor-pointer text-white  border-end border-3 border-primary pe-3">Accueil</li>
+                        <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Message</li>
+                        <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">A propos</li>
+                        <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Confidentialité</li>
+                        <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
+                    </ul>
+                        <!-- Greeting -->
+                        <p class="fw-bold">
+                            Bonjour
+                            <span class="text-primary">
+                                <?php
+                                    //si la variable de session existe, afficher le pseudo de l'utilisateur
+                                    if (isset($_SESSION['s_pseudo'])) {
+                                        echo " ".$_SESSION['s_pseudo'];
+                                    } else {
+                                        echo ' visiteur';
+                                    }
+                                ?>
+                            </span>
+                        </p>
+                    <!-- Publications -->
+                        <section class="border px-2 pt-2 pb-4 posts">
+                            <!-- Make a publication -->
+                            <?php include 'template/post_content.php' ?>
+                        </section>
+                </section>
+            <!-- Flottant button -->
+                 <ul class="position-absolute end-0 bottom-0 d-flex list-unstyled pb-5 pe-5">
+                <!-- Make a post -->
+                    <li class="me-3 cursor-pointer">
+                        <i id="floatingPostButton" class="fa-solid fa-square-plus fa-beat fa-2xl icon-color-blue"></i>
+                    </li>
+                        
+                    <!-- Write a message -->
+                    <li class="cursor-pointer">
+                        <i class="fa-solid fa-message fa-bounce fa-2xl icon-color-blue"></i>
+                    </li>
+                 </ul>
+            <!-- when the user click on the button we display the content of the floating post  -->
+            <?php include 'template/floating_post_form.php' ?>
+            <!-- Message edition  -->
         </section>
-    </section>
     <!-- Footer -->
     <?php include 'template/footer.php' ?>
-
-    <section >
-        <?php
-        //si la variable de session n'existe pas, on affiche le formulaire de connexion
-            if (!isset($_SESSION['s_nom'])) {
-                include 'login.php';
-            }
-        ?>
-    </section>
+        <!-- Login -->
+        <section >
+            <?php
+            //si la variable de session n'existe pas, on affiche le formulaire de connexion
+                if (!isset($_SESSION['s_nom'])) {
+                    include 'login.php';
+                }
+            ?>
+        </section>
 
     <script src="js/script.js"></script>
-    <script>
-        // previewImage , on affiche l'image avant de la télécharger
-        const imageInput = document.getElementById("imagePost");
-        const previewImage = document.getElementById("previewImage");
+        <script>
+            // previewImage , on affiche l'image avant de la télécharger
+            const imageInput = document.getElementById("imagePost");
+            const previewImage = document.getElementById("previewImage");
 
-        imageInput.addEventListener("change", function(event) {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
+            imageInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
 
-            //on lit le fichier et on l'affiche dans l'élément previewImage
-            reader.addEventListener("load", function() {
-                previewImage.src = reader.result;
-                if (previewImage.classList.contains("d-none")) {
-                    previewImage.classList.remove("d-none");
-                }
+                //on lit le fichier et on l'affiche dans l'élément previewImage
+                reader.addEventListener("load", function() {
+                    previewImage.src = reader.result;
+                    if (previewImage.classList.contains("d-none")) {
+                        previewImage.classList.remove("d-none");
+                    }
+                });
+
+                reader.readAsDataURL(file);
+            }
             });
-
-            reader.readAsDataURL(file);
-        }
-        });
-        function showForm() {
-          document.getElementById('hoverSection').classList.remove('d-none');
-        }
-    </script>
+            function showForm() {
+            document.getElementById('hoverSection').classList.remove('d-none');
+            }
+        </script>
+    <style>
+        
+    </style>
 </body>
 </html>

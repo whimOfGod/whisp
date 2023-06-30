@@ -1,7 +1,9 @@
+@import url("variable.css");
 @import url("header.css");
 @import url("avatar.css");
 @import url("login.css");
 @import url("profile_page.css");
+@import url("post_content.css");
 
 *{
     margin: 0;
@@ -9,44 +11,43 @@
 }
 
 .text-primary{
-    color: #4C27E0;
+    color: var(--primary-color);
 }
 
 .icon-color-blue{
-    color: #4C27E0;
+    color: var(--primary-color);
 }
 
 .icon-color-orange{
-    color: #FF754A;
+    color: var(--secondary-color);
 }
 
 .icon-color-red{
-    color: #d2284a;
+    color: var(--danger-color);
 }
 
 .icon-color-green{
-    color: #59B23E;
+    color: var(--success-color);
 }
 
 .icon-color-gray {
-    color: #9B9B9B;
+    color: var(--medium-color);
 }
 
 .border-primary{
-    border-color: #3C2BFA;
+    border-color: var(--primary-color);
 }
 
 .border-secondary {
-    border: 2px solid #e2e3e5;
+    border: 2px solid var(--light-color);
 }
 
-
 .icon-color-w{
-    color: #fff;
+    color: var(--white-color);
 }
 
 .middle-nav-hover :hover {
-    background-color: #FF754A;
+    background-color: var(--secondary-color);
 }
 
 .no-outline {
@@ -54,11 +55,11 @@
 }
 
 .bg-primary{
-    background-color: #4C27E0; 
+    background-color: var(--primary-color); 
 }
 
 .bg-gray{
-    background-color: #FF754A; 
+    background-color: var(--secondary-color); 
 }
 
 .w-20{
@@ -104,6 +105,20 @@
 
 
 /* Index */
+@media screen and (max-width: 767px){
+    .index_content{
+        height: calc(100vh - 262.19px);
+        overflow: auto;
+    }
+}
+
+@media screen and (max-width: 409px){
+    .index_content{
+        height: calc(100vh - 309.77px);
+        overflow: auto;
+    }
+}
+
 @media screen and (min-width: 1200px){
     .posts{
         height: calc(100vh - 260px);
