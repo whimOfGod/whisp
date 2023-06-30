@@ -18,7 +18,7 @@
             $requete->execute();
             //on définit une variable qui va stocker notre requête 
             $whisps = $requete->fetchAll(PDO::FETCH_ASSOC);
-        
+        // making a research by corresponding to the query
         if (isset($_GET['research'])) {
             $query = $_GET['research'];
             $requete = $database->prepare("SELECT * FROM whisps INNER JOIN users ON whisps.user_id = users.users_id WHERE tweet LIKE :query ORDER BY date DESC");

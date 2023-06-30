@@ -33,7 +33,7 @@
                   </li>
                     <!--Verify if user is connected and hide li "s'inscrire"-->
                     <?php if (!isset($_SESSION['s_users_id'])) { ?>
-                      <li class="cursor-pointer" onclick="showForm()">S'inscrire</li>
+                      <li class="cursor-pointer" onclick="showForm()"><i class="fa-solid fa-right-to-bracket fw-semibold px-2"></i>S'inscrire</li>
                     <?php } ?>
                     <?php if (isset($_SESSION['s_users_id'])) { ?>
                       <div class="user-avatar rounded-3 border-2 border-primary no-outline my-4 d-flex justify-content-center">
