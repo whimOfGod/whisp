@@ -13,7 +13,7 @@ function openMenu(){
     }
     document.getElementById("menu_items").classList.add("d-inline-block");
     document.getElementById("menu_items").classList.add("open");
-    
+    document.getElementById("menu_items").classList.add("position-absolute");    
     document.getElementById("menu").classList.add("d-none");
 
 }
@@ -64,4 +64,16 @@ if (document.getElementById('headerSection').classList.contains('blur-background
     document.getElementById('headerSection').style.pointerEvents = 'none';
 }
 
-
+// make a tag filter when the user click on a tag
+function myFilter_tag(tag) {
+  console.log(tag);
+  var x = document.getElementsByClassName("post");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    if (x[i].classList.contains(tag)) {
+      x[i].style.display = "block";
+    } else {
+      x[i].style.display = "none";
+    }
+  }
+}

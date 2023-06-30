@@ -1,5 +1,5 @@
 
-<section class="bg-black-transparent position-fixed top-0 w-100 h-100
+<section class="bg-black-transparent position-fixed top-0 bg-blur w-100 h-100
                 d-flex align-items-center justify-content-center"
                 id="hoverSection">
 

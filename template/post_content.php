@@ -26,7 +26,7 @@
                             <label for="imagePost">
                                 <!-- Image -->
                                 <i class="fa-solid fa-image w-20 cursor-pointer icon-color-blue"></i>
-                                <input type="file" name="media" id="imagePost" hidden />
+                                <input type="file" name="media" accept="image/jpg, image/png, image/gif" id="imagePost" hidden />
                             </label>
                             <!-- Tag -->
                             <i class="fa-solid fa-tags w-20 pt-2 cursor-pointer icon-color-orange" onclick="showTag()"></i>
@@ -39,24 +39,45 @@
                             </textarea>
                         <?php } ?>
 
-                </label>
-                <div class=" d-flex justify-content-space-between">
-                    <!-- Image preview -->
-                    <img id="previewImage" src="#" alt="Aperçu" title="Aperçu" class="d-none h-40" />
-                        <!-- Add image button and tag -->
-                        <select class="d-none no-outline border-0" name="tag" id="tag">
-                            <option value="red">Musique</option>
-                            <option value="blue">Anime</option>
-                            <option value="green">Histoire</option>
-                            <option value="violet">Science</option>
-                        </select>
-                        <button type="submit" class=" btn bg-primary ms-auto my-2 px-4 py-1 rounded-5 text-white fw-semibold">
-                            Publier
-                        </button>
-                    <div></div>
-                </div>
+                        </label>
+                            <div class=" d-flex justify-content-space-between">
+                                <!-- Image preview -->
+                                <img id="previewImage" src="#" alt="Aperçu" title="Aperçu" class="d-none h-40" />
+                                    <!-- Add image button and tag -->
+                                    <select class="d-none no-outline border-0" name="tag" id="tag">
+                                        <option value="red">#Musique</option>
+                                        <option value="blue">#Anime</option>
+                                        <option value="green">#Histoire</option>
+                                        <option value="violet">#Science</option>
+                                        <option value="orange">#Voyage</option>
+                                        <option value="yellow">#Drôle</option>
+                                        <option value="oranged">#Danse</option>
+                                        <option value="green">#Etude</option>
+                                        <option value="violet">#Découverte</option>
+                                        <option value="violet">#Trend</option>
+                                    </select>
+                                        <button type="submit" class=" btn  bg-primary ms-auto my-2 px-4 py-1 rounded-5 text-white fw-semibold">
+                                            Publier
+                                        </button>
+                                <div></div>
+                            </div><!--
+                            <div class="search-result  ">
+                                <ul class="d-flex justify-content-space-between">
+                                    <li><button onclick="filter_tag('red')">#Musique</button></li>
+                                    <li><button onclick="filter_tag('blue')">#Anime</button></li>
+                                    <li><button onclick="filter_tag('green')">#Histoire</button></li>
+                                    <li><button onclick="filter_tag('violet')">#Science</button></li>
+                                    <li><button onclick="filter_tag('orange')">#Voyage</button></li>
+                                    <li><button onclick="filter_tag('yellow')">#Drôle</button></li>
+                                    <li><button onclick="filter_tag('oranged')">#Danse</button></li>
+                                    <li><button onclick="filter_tag('green')">#Etude</button></li>
+                                    <li><button onclick="filter_tag('violet')">#Découverte</button></li>
+                                    <li><button onclick="filter_tag('yellow')">#Trend</button></li>
+                                </ul>
+                            </div>-->
 
-            </form>
+</form>
+            
             <!-- Flip publications up to down -->
             <figure class="border-top">
                 <a href="?order=asc" class="text-decoration-none">

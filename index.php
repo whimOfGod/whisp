@@ -64,7 +64,9 @@
                         <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Message</li>
                         <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">A propos</li>
                         <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary">Confidentialité</li>
-                        <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
+                        <?php if (!isset($_SESSION['s_users_id'])) { ?>
+                            <li class="cursor-pointer text-white  px-3 border-end border-3 border-primary" onclick="showForm()">S'inscrire</li>
+                        <?php } ?>
                     </ul>
                         <!-- Greeting -->
                         <p class="fw-bold">

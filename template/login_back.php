@@ -30,7 +30,7 @@ if (isset($_POST['mail']) && isset($_POST['password'])) {
         }
     } else {
         // Utilisateur non trouvé
-        echo "Identifiants invalides";
+        echo '<script>alert ("Identifiants invalides") </script>';
         header("Location: ../index.php");
         exit();
     }

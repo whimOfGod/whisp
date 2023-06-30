@@ -12,18 +12,11 @@ if (isset($_FILES['media']) && $_FILES['media']['error'] === UPLOAD_ERR_OK) {
     $media = $_FILES['media']['name'];
     $media_tmp = $_FILES['media']['tmp_name'];
 
-    // seulement les fichiers en .jpg, .jpeg, .png et .gif sont acceptés
-    $allowed_extensions = ["jpg", "jpeg", "png", "gif"];
-    $extension = strtolower(pathinfo($media, PATHINFO_EXTENSION));
-    // On vérifie si l'extension du fichier envoyé est dans le tableau des extensions autorisées
-    if (!in_array($extension, $allowed_extensions)) {
-        echo "Le fichier n'est pas une image valide.";
-        exit();
-    }
+
 // On vérifie si le fichier ne dépasse pas 2Mo
 
 if ($_FILES['media']['size'] > 2000000) {
-    echo "<script>alert('Le fichier ne doit pas dépasser 10Mo.');</script>";
+    echo "<script>alert('Le fichier ne doit pas dépasser 2Mo.');</script>";
     echo "<script>window.location.href = '../index.php';</script>";
     exit();
 }

@@ -1,5 +1,5 @@
-<div id="floatingModal" > 
-    <form id="floating-form-id" method="POST" action="template/publish_whisp.php" enctype="multipart/form-data" style="display:none;" >                            
+<div id="floatingModal"   > 
+    <form id="floating-form-id" class="bg-shadow" method="POST" action="template/publish_whisp.php" enctype="multipart/form-data" style="display:none;" >                            
         <label class="d-flex bg-secondary-subtle p-1 w-full">
             <!-- Post message -->
             <!-- lorsque l'utilisateur n'est pas connecté, il ne peut pas publier de message -->

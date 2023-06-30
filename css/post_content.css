@@ -6,6 +6,10 @@
     margin-bottom: 0.1rem;
 }
 
+.btn-color-hover :hover{
+    background-color: var(--secondary-color);
+}
+
 .blur-background-section {
     filter: blur(5px);
     pointer-events: none;

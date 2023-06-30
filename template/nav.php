@@ -1,4 +1,4 @@
-<div class="position-absolute top-3 start-0 mx-2" aria-label="Menu">
+<div class="top-3 start-0 mx-2" aria-label="Menu">
   <!-- Menu "Icon -->
   <figure class="cursor-pointer m-0 open_menu" id="open_menu" onclick="openMenu()">
     <img src="images/menu.svg" title="Ouvrir le menu" alt="Menu" class="w-40" />
@@ -10,7 +10,10 @@
                 <img src="images/close.svg" title="Fermer le menu" alt="Fermer" class="w-20" />
             </figure>
                 <ul class="list-unstyled px-4 text-decoration-none" >
-                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-house px-2 icon-hover"></i>Accueil</li>
+                  <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-house px-2 icon-hover">
+                    <a class="text-decoration-none text-white" href="index.php">
+                      </i>Accueil</li>
+                    </a>
                     <li class="cursor-pointer d-flex align-items-center fw-semibold">
                       <a class="text-decoration-none text-white" href="profile.php">
                       <i class="fa-solid fa-user px-2"></i>
@@ -19,12 +22,16 @@
                   </li>
                   <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-circle-info px-2"></i>A propos</li>
                     <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-lock px-2"></i>Confidentialité</li>
+                    <!-- when the user is connected the li "se connecter will be displayed" -->
+                    <?php if (!isset($_SESSION['s_users_id'])) { ?> 
                       <li class="cursor-pointer d-flex align-items-center fw-semibold"><i class="fa-solid fa-right-to-bracket px-2"></i>
                         <a class="text-white text-decoration-none  " onclick="showForm()">Se connecter</a>
                       </li>
+                    <?php } ?>
                     <li class="cursor-pointer d-flex justify-content-space-between align-items-center fw-semibold"><i class="fa-solid fa-power-off px-2"></i>
                         <a class="text-white text-decoration-none" href="template/disconnect.php">Se deconnecter</a>
                   </li>
+                    <!--Verify if user is connected and hide li "s'inscrire"-->
                     <?php if (!isset($_SESSION['s_users_id'])) { ?>
                       <li class="cursor-pointer" onclick="showForm()">S'inscrire</li>
                     <?php } ?>
